@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>关于UIPageControl的frame 问题 | Good! Morning!</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="a SINGLE coder">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="关于UIPageControl的frame 问题 | Good! Morning!">
+    <meta name="twitter:description" content="a SINGLE coder">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="关于UIPageControl的frame 问题 | Good! Morning!">
+    <meta property="og:description" content="a SINGLE coder">
+
+    
+    <meta name="author" content="Morningxxx">
+    
+    <link rel="stylesheet" href="/css/vno.css" type="text/css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" type="text/css">
+
+    
+    <link rel="icon" href="/images/icon.jpg">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://yoursite.com/2016/03/03/关于UIPageController的frame-问题/"/>
+
+    
+</head>
+
+<body class="home-template no-js">
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 Good! Morning! 的主页"><img src="/images/icon2.jpeg" width="80" alt="Good! Morning! logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for Good! Morning!">Good! Morning!</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">GoodMorning!</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">a SINGLE coder</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+              <li class="navigation__item"><a href="/关于我">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="http://weibo.com/2300845072/" title="我的微博" target="_blank">
+      <i class='social fa fa-weibo'></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/Morningxxx" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-blue"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2016-03-03T00:22:35.000Z" class="post-list__meta--date date">2016-03-03</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/IOS/">IOS</a>, <a class="tag-link" href="/tags/UI/">UI</a>
+</span>
+    </div>
+    <h1 class="post-title">关于UIPageControl的frame 问题</h1>
+  </header>
+
+  <section class="post">
+    <p>Discuss about when UIPageControl is in an auto-layout environment, sometimes we should use frame to locate UIPageControl, and in some situation we will lose control of it.</p>
+<a id="more"></a>
+<p>If it’s hard for you to read Chinese, maybe you can  <a href="https://github.com/Morningxxx/UIPageControllerFrameProblem" target="_blank" rel="external">click here</a> to download the demo and in which I wrote some brief description among my code. </p>
+<h3 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h3><h5 id="u6B64_u6587_u4E3A_u539F_u521B_u535A_u5BA2_uFF0C_u5982_u9700_u8F6C_u8F7D_uFF0C_u8BF7_u6CE8_u660E_u51FA_u5904_u3002"><a href="#u6B64_u6587_u4E3A_u539F_u521B_u535A_u5BA2_uFF0C_u5982_u9700_u8F6C_u8F7D_uFF0C_u8BF7_u6CE8_u660E_u51FA_u5904_u3002" class="headerlink" title="此文为原创博客，如需转载，请注明出处。"></a>此文为原创博客，如需转载，请注明出处。</h5><p>如果读者有更深的见解或者更好的解决方法，或是对本文有任何建议或者看法，欢迎发送邮件到我的邮箱：spechles@spechles.com告诉我，我采纳后会更新博客，并注明出处，给出相关链接。</p>
+<h3 id="u4EE3_u7801"><a href="#u4EE3_u7801" class="headerlink" title="代码"></a>代码</h3><p><a href="https://github.com/Morningxxx/UIPageControllerFrameProblem" target="_blank" rel="external">GitHub</a></p>
+<h3 id="u6982_u8FF0"><a href="#u6982_u8FF0" class="headerlink" title="概述"></a>概述</h3><p>在我完成我的毕业设计的时候，我遇到了一个非常奇怪的问题。当我将UIPageControl加入到一个设定了自动布局约束的UIScrollView中时，我想要UIPageControl水平居中，但我的代码在iphone5和5s上是奏效的，但到了iphone6以上，位置就放生的非常诡异的偏移。通过NSLog查看相关参数，并未察觉有什么问题。这引发了我的好奇。我尝试解决这个问题。这篇文章中，我将通过新写一个demo来详细讨论和解决这个问题。</p>
+<h3 id="u53D1_u73B0_u95EE_u9898"><a href="#u53D1_u73B0_u95EE_u9898" class="headerlink" title="发现问题"></a>发现问题</h3><p>先让我们来看看这个问题是怎么样的。</p>
+<p>新建一个工程，在main.storyboard的控制器上拖一个scrollView，给他设置约束，离四周间距为0，拖到ViewController.m的私有拓展，命名为backgroundView。添加我要的UIPageControl：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIPageControl</span> *pageContrlA = [[<span class="built_in">UIPageControl</span> alloc]init];</span><br><span class="line">pageContrlA<span class="variable">.numberOfPages</span> = COUNT;</span><br><span class="line"><span class="built_in">CGRect</span> frame = <span class="built_in">CGRectMake</span>(<span class="number">0</span>, <span class="number">20</span>, <span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>, <span class="number">30</span>);</span><br><span class="line">pageContrlA<span class="variable">.frame</span> = frame;</span><br><span class="line">pageContrlA<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> blackColor];</span><br><span class="line">pageContrlA<span class="variable">.currentPageIndicatorTintColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">pageContrlA<span class="variable">.pageIndicatorTintColor</span> = [<span class="built_in">UIColor</span> greenColor];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.backgroundView</span> addSubview:pageContrlA];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"pageContrlA's width = %lf"</span>,pageContrlA<span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>);</span><br></pre></td></tr></table></figure>
+<p>为了让其更好辨别，我将他们添加了背景颜色。其中页数为一个宏定义，为7。最后我们NSLog一下看看pageContrl的宽度是多少。</p>
+<p>先让我们看看IPhone5s的运行效果：</p>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-6%402x.png" alt="image"></p>
+<p>嗯，效果不错，控制台打印的信息呢？</p>
+<blockquote>
+<p>2016-03-03 15:10:37.550 UIPageControllerFrameProblem[25128:1401126] pageContrlA’s width = 320.000000</p>
+</blockquote>
+<p>嗯，也很对。</p>
+<p>那让我们看看6sPlus的运行结果：</p>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-0%402x.png" alt="image"></p>
+<p>可以看得出，偏右严重，这显然违反了我的初衷。那控制台信息呢？</p>
+<blockquote>
+<p>2016-03-03 15:17:39.715 UIPageControllerFrameProblem[25207:1406791] pageContrlA’s width = 414.000000</p>
+</blockquote>
+<p>咦，看上去并没有问题。可能是小圆点的位置并不是居中显示的呢？<br>于是我尝试了用UIPageControl提供的-(CGSize)sizeForNumberOfPages方法，重新给定一个frame，然后手动居中它：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIPageControl</span> *pageContrlB = [[<span class="built_in">UIPageControl</span> alloc]init];</span><br><span class="line">pageContrlB<span class="variable">.numberOfPages</span> = COUNT;</span><br><span class="line"><span class="built_in">CGSize</span> size = [pageContrlB sizeForNumberOfPages:COUNT];</span><br><span class="line">frame<span class="variable">.size</span> = size;</span><br><span class="line">frame<span class="variable">.origin</span> = <span class="built_in">CGPointMake</span>((<span class="keyword">self</span><span class="variable">.view</span><span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>-size<span class="variable">.width</span>)/<span class="number">2</span>, <span class="number">55</span>);</span><br><span class="line">pageContrlB<span class="variable">.frame</span> = frame;</span><br><span class="line">pageContrlB<span class="variable">.backgroundColor</span> = [<span class="built_in">UIColor</span> blackColor];</span><br><span class="line">pageContrlB<span class="variable">.currentPageIndicatorTintColor</span> = [<span class="built_in">UIColor</span> redColor];</span><br><span class="line">pageContrlB<span class="variable">.pageIndicatorTintColor</span> = [<span class="built_in">UIColor</span> greenColor];</span><br><span class="line">[<span class="keyword">self</span><span class="variable">.backgroundView</span> addSubview:pageContrlB];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"pageContrlB's width = %lf"</span>,pageContrlB<span class="variable">.frame</span><span class="variable">.size</span><span class="variable">.width</span>);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"pageContrlB's origin.x = %lf"</span>,pageContrlB<span class="variable">.frame</span><span class="variable">.origin</span><span class="variable">.x</span>);</span><br></pre></td></tr></table></figure>
+<p>这次让我们看看它的宽度和起始的x值，依旧在6sPlus上运行：</p>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-1%402x.png" alt="image"></p>
+<p>Oh! No!我们清楚得看到小圆点均匀居中地排列在黑色矩形中，不是小圆点排版的问题，那NSLog的信息呢？</p>
+<blockquote>
+<p>UIPageControllerFrameProblem[25228:1412550] pageContrlB’s width = 103.000000<br>2016-03-03 15:27:32.924 UIPageControllerFrameProblem[25228:1412550] pageContrlB’s origin.x = 155.500000</p>
+</blockquote>
+<p>很有趣，让我们计算一下，6sPlus的屏幕宽度应该是414，减去系统给出的这个宽度103是311，除以2，得105.5，完全没错。</p>
+<p>怎么了？为什么数值这么正确，但显示的确严重偏右了？我怀疑起了我看到的这个黑色框是否按照我给她的frame来显示了。我决定新建一个view，给它赋上一样的宽度和起始点很坐标，加到同一个父视图上看看结果：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UIView *viewB = [[UIView alloc]init]<span class="comment">;</span></span><br><span class="line">frame.origin.y = 95<span class="comment">;</span></span><br><span class="line">viewB.frame = frame<span class="comment">;</span></span><br><span class="line">viewB.backgroundColor = [UIColor orangeColor]<span class="comment">;</span></span><br><span class="line">[self.backgroundView addSubview:viewB]<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-2%402x.png" alt="image"></p>
+<p>很好地居中了，起始点并没有错。那么显而易见，应该是UIPageControl的锅了。这太奇怪了，UIPageControl竟然自己变长，并偏离了起始点。</p>
+<p>测试到这里我有不知所措了。我要怎么去解决这个这么反常的结果呢？事实上此处我花了很长的时间去解决并尝试理解这样一个unexpect的结果。人为调整它的frame显然不是我想要的结果，因为现在它在5s上是运行正常的，如果手动修改，那在5s上就不再正常了。此处不将所有尝试手段进行展示了，大多数是没有价值的。直接给出一个可信可靠的方式。</p>
+<h3 id="u89E3_u51B3_u95EE_u9898"><a href="#u89E3_u51B3_u95EE_u9898" class="headerlink" title="解决问题"></a>解决问题</h3><p>既然UIView加上去没问题，pageControl加在不加约束的父视图也没问题，那要不这样：我创建一个大小正好、位置居中的view，然后把pageControl添加到它之上不就好了么？</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">UIPageControl *pageContrlC = [[UIPageControl alloc]init]<span class="comment">;</span></span><br><span class="line">pageContrlC.numberOfPages = COUNT<span class="comment">;</span></span><br><span class="line">pageContrlC.backgroundColor = [UIColor blackColor]<span class="comment">;</span></span><br><span class="line">pageContrlC.currentPageIndicatorTintColor = [UIColor redColor]<span class="comment">;</span></span><br><span class="line">pageContrlC.pageIndicatorTintColor = [UIColor greenColor]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">UIView *viewC = [[UIView alloc]init]<span class="comment">;</span></span><br><span class="line">size = [pageContrlC sizeForNumberOfPages:COUNT]<span class="comment">;</span></span><br><span class="line">frame = CGRectMake((self.view.frame.size.width-size.width)/2, 185, size.width, size.height)<span class="comment">;</span></span><br><span class="line">viewC.frame = frame<span class="comment">;</span></span><br><span class="line">viewC.backgroundColor = [UIColor blueColor]<span class="comment">;</span></span><br><span class="line">[self.backgroundView addSubview:viewC]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">pageContrlC.frame = CGRectMake(0, 0, size.width, size.height)<span class="comment">;</span></span><br><span class="line">[viewC addSubview:pageContrlC]<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>让我们还是用6sPlas运行一下：</p>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-3%402x.png" alt="image"></p>
+<p>确实居中了。那这个问题基本上已经解决了。</p>
+<p>事实上根本不用计算着么个大小正好的view，如下：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">UIPageControl *pageContrlD = [[UIPageControl alloc]init]<span class="comment">;</span></span><br><span class="line">pageContrlD.numberOfPages = COUNT<span class="comment">;</span></span><br><span class="line">pageContrlD.backgroundColor = [UIColor blackColor]<span class="comment">;</span></span><br><span class="line">pageContrlD.currentPageIndicatorTintColor = [UIColor redColor]<span class="comment">;</span></span><br><span class="line">pageContrlD.pageIndicatorTintColor = [UIColor greenColor]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">UIView *viewD = [[UIView alloc]init]<span class="comment">;</span></span><br><span class="line">frame = CGRectMake(0, 225, self.view.frame.size.width, 35)<span class="comment">;</span></span><br><span class="line">viewD.frame = frame<span class="comment">;</span></span><br><span class="line">viewD.backgroundColor = [UIColor blueColor]<span class="comment">;</span></span><br><span class="line">[self.backgroundView addSubview:viewD]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">pageContrlD.frame = viewD.bounds<span class="comment">;</span></span><br><span class="line">[viewD addSubview:pageContrlD]<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-4%402x.png" alt="image"></p>
+<p>同样很好的显示了。</p>
+<h3 id="u5176_u4ED6_u91CD_u8981_u5185_u5BB9"><a href="#u5176_u4ED6_u91CD_u8981_u5185_u5BB9" class="headerlink" title="其他重要内容"></a>其他<em>重要</em>内容</h3><p>其实从全文一始就存在一个陷阱，让我们用self.backgroundView.frame.size.width来代替第二段代码的self.view.frame.size.width：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">UIPageControl *pageContrlE = [[UIPageControl alloc]init]<span class="comment">;</span></span><br><span class="line">pageContrlE.numberOfPages = COUNT<span class="comment">;</span></span><br><span class="line">size = [pageContrlE sizeForNumberOfPages:COUNT]<span class="comment">;</span></span><br><span class="line">frame.size = size<span class="comment">;</span></span><br><span class="line">frame.origin = CGPointMake((self.backgroundView.frame.size.width-size.width)/2, 300)<span class="comment">;</span></span><br><span class="line">pageContrlE.frame = frame<span class="comment">;</span></span><br><span class="line">pageContrlE.backgroundColor = [UIColor blackColor]<span class="comment">;</span></span><br><span class="line">pageContrlE.currentPageIndicatorTintColor = [UIColor redColor]<span class="comment">;</span></span><br><span class="line">pageContrlE.pageIndicatorTintColor = [UIColor greenColor]<span class="comment">;</span></span><br><span class="line">[self.backgroundView addSubview:pageContrlE]<span class="comment">;</span></span><br><span class="line">NSLog(@"pageContrlE's width = %lf",pageContrlE.frame.size.width)<span class="comment">;</span></span><br><span class="line">NSLog(@"pageContrlE's origin.x = %lf",pageContrlE.frame.origin.x)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">UIView *viewE = [[UIView alloc]init]<span class="comment">;</span></span><br><span class="line">frame.origin.y = 340<span class="comment">;</span></span><br><span class="line">viewE.frame = frame<span class="comment">;</span></span><br><span class="line">viewE.backgroundColor = [UIColor orangeColor]<span class="comment">;</span></span><br><span class="line">[self.backgroundView addSubview:viewE]<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://7xrdd0.com1.z0.glb.clouddn.com/Blog4-QQ20160303-7%402x.png" alt="image"></p>
+<p>我们看到非常奇怪的，pageControl虽然居中正常了，但是view却偏左了。让我们看看NSLog打印的信息：</p>
+<blockquote>
+<p>2016-03-03 16:09:54.049 UIPageControllerFrameProblem[25279:1432117] pageContrlE’s width = 103.000000<br>2016-03-03 16:09:54.050 UIPageControllerFrameProblem[25279:1432117] pageContrlE’s origin.x = 108.500000</p>
+</blockquote>
+<p>我们来计算一下，2*108.5+103应该是屏幕的宽度才对，结果是320。换成6s，结果是一样的。似乎在做pageControl的布局的时候，使用的坐标就自动变成了5s的尺寸了，怪不得5s上的显示是正确的！可是view却并不一样。view和pageControl似乎在处理这一种情况的时候，底层并未采取相同的方法。具体原因，我不得而知。</p>
+<p>总之我们在处理相关问题的时候需要小心，个人还是推荐使用我给出的解决方法来解决。如果读者有更深的见解或者更好的解决方法，欢迎发送邮件到我的邮箱：spechles@spechles.com告诉我，我采纳后会更新博客，并注明出处，给出相关链接。</p>
+
+  </section>
+
+</article>
+
+
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy; 2016 - 本站由 <a href="/">@Longbo Ma</a> 创建,
+        使用<a href="https://github.com/lenbo-ma/hexo-theme-vno">hexo-theme-vno</a>主题,
+        修改自<a href="http://github.com/onevcat/vno" target="_blank">Vno</a>
+    </span>
+</footer>
+
+        </div>
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+    <script src="/js/main.js" type="text/javascript"></script>
+
+     
+</body>
+</html>
